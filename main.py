@@ -1,6 +1,3 @@
-
-from keep_alive import keep_alive
-keep_alive()
 import telebot,datetime,requests,psutil
 bot_token = '6074793820:AAF_SMWYg5GI1vnHU6O__DJsPhUPP89RTEA' 
 bot = telebot.TeleBot(bot_token)
