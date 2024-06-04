@@ -1,17 +1,6 @@
-import telebot,datetime,requests,psutil
+import telebot,datetime,requests
 bot_token = '6074793820:AAF_SMWYg5GI1vnHU6O__DJsPhUPP89RTEA' 
 bot = telebot.TeleBot(bot_token)
-@bot.message_handler(commands=['show'])
-def show(message):
-    cpu_usage = psutil.cpu_percent() 
-    cpu_text = f"CPU Đang Dùng:  {cpu_usage}%"
-    memory_usage = psutil.virtual_memory().percent
-    memory_text = f"Memory Đang Dùng:  {memory_usage}%"
-    disk_usage = psutil.disk_usage('/').percent 
-    disk_text = f"Disk Đang Dùng:  {disk_usage}%"
-    status_text = f'\n{cpu_text}\n{memory_text}\n{disk_text}'
-    bot.reply_to(message,text=status_text)
-
 @bot.message_handler(commands=['code'])
 def lqm_sms(message):
     uid = message.text.split()[1]
